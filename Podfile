@@ -6,5 +6,7 @@ target 'Objective-C-C' do
   # use_frameworks!
 
     pod 'AFNetworking', '~> 3.0'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKLoginKit'
 
 end
