@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */; };
 		A2835F3C1F661FC80061328A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3B1F661FC80061328A /* main.m */; };
 		A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3E1F661FC80061328A /* AppDelegate.m */; };
 		A2835F421F661FC80061328A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F411F661FC80061328A /* ViewController.m */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CE3AD81910A4A52F57010AF /* Pods-Objective-C-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-C-C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C.debug.xcconfig"; sourceTree = "<group>"; };
+		40A121CAF367781A8B078FAC /* Pods-Objective-C-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-C-C.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C.release.xcconfig"; sourceTree = "<group>"; };
+		4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Objective-C-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C402C2E035C9021ABA08AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44923C04AF451359ACB0BF7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3AD81910A4A52F57010AF /* Pods-Objective-C-C.debug.xcconfig */,
+				40A121CAF367781A8B078FAC /* Pods-Objective-C-C.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A2835F2E1F661FC80061328A = {
 			isa = PBXGroup;
 			children = (
 				A2835F391F661FC80061328A /* Objective-C-C */,
 				A2835F381F661FC80061328A /* Products */,
+				44923C04AF451359ACB0BF7B /* Pods */,
+				04C402C2E035C9021ABA08AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2835F4E1F661FC80061328A /* Build configuration list for PBXNativeTarget "Objective-C-C" */;
 			buildPhases = (
+				982A4D3E5A577704F4D41DA0 /* [CP] Check Pods Manifest.lock */,
 				A2835F331F661FC80061328A /* Sources */,
 				A2835F341F661FC80061328A /* Frameworks */,
 				A2835F351F661FC80061328A /* Resources */,
+				7294B96FE03C06129A3AFDEF /* [CP] Embed Pods Frameworks */,
+				3015AFF74D7513B5D1372A9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3015AFF74D7513B5D1372A9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7294B96FE03C06129A3AFDEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		982A4D3E5A577704F4D41DA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Objective-C-C-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A2835F331F661FC80061328A /* Sources */ = {
@@ -270,6 +351,7 @@
 		};
 		A2835F4F1F661FC80061328A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE3AD81910A4A52F57010AF /* Pods-Objective-C-C.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Objective-C-C/Info.plist";
@@ -281,6 +363,7 @@
 		};
 		A2835F501F661FC80061328A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A121CAF367781A8B078FAC /* Pods-Objective-C-C.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Objective-C-C/Info.plist";
