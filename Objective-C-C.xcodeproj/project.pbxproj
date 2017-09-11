@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		933F78EF1F6672AC00DC7395 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F78EE1F6672AC00DC7395 /* LoginViewController.m */; };
 		A2835F3C1F661FC80061328A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3B1F661FC80061328A /* main.m */; };
 		A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3E1F661FC80061328A /* AppDelegate.m */; };
 		A2835F421F661FC80061328A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F411F661FC80061328A /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		933F78ED1F6672AC00DC7395 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		933F78EE1F6672AC00DC7395 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 			children = (
 				A2835F3D1F661FC80061328A /* AppDelegate.h */,
 				A2835F3E1F661FC80061328A /* AppDelegate.m */,
+				933F78ED1F6672AC00DC7395 /* LoginViewController.h */,
+				933F78EE1F6672AC00DC7395 /* LoginViewController.m */,
 				A2835F401F661FC80061328A /* ViewController.h */,
 				A2835F411F661FC80061328A /* ViewController.m */,
 				A2835F431F661FC80061328A /* Main.storyboard */,
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933F78EF1F6672AC00DC7395 /* LoginViewController.m in Sources */,
 				A2835F421F661FC80061328A /* ViewController.m in Sources */,
 				A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */,
 				A2835F3C1F661FC80061328A /* main.m in Sources */,
@@ -309,6 +315,7 @@
 				A2835F501F661FC80061328A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
