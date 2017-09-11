@@ -84,6 +84,8 @@
 			children = (
 				A2835F3D1F661FC80061328A /* AppDelegate.h */,
 				A2835F3E1F661FC80061328A /* AppDelegate.m */,
+				933F78ED1F6672AC00DC7395 /* LoginViewController.h */,
+				933F78EE1F6672AC00DC7395 /* LoginViewController.m */,
 				A2835F401F661FC80061328A /* ViewController.h */,
 				A2835F411F661FC80061328A /* ViewController.m */,
 				A2835F431F661FC80061328A /* Main.storyboard */,
@@ -231,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933F78EF1F6672AC00DC7395 /* LoginViewController.m in Sources */,
 				A2835F421F661FC80061328A /* ViewController.m in Sources */,
 				A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */,
 				A2835F3C1F661FC80061328A /* main.m in Sources */,
@@ -392,6 +395,7 @@
 				A2835F501F661FC80061328A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
