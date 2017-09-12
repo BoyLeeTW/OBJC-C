@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 @interface AppDelegate ()
 
 @end
@@ -17,8 +17,48 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    return YES;
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] valueForKey:@"token"]);
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"token"] != nil) {
+        
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UITabBarController *tabBarVC = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
+        
+        self.window.rootViewController = tabBarVC;
+        [self.window makeKeyAndVisible];
+        return YES;
+        
+    } else {
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
+        
+        [[UIApplication sharedApplication].keyWindow setRootViewController:loginVC];
+        
+        return YES;
+        
+    }
+
 }
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    // Add any custom logic here.
+    return handled;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -40,6 +80,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 
