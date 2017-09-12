@@ -22,6 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="landing" translatesAutoresizingMaskIntoConstraints="NO" id="Tg4-Wl-fMb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qg7-Oi-lvd">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patissier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-N0-lyY">
+                                <rect key="frame" x="79" y="115" width="216" height="58"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXh-Un-pQz">
                                 <rect key="frame" x="374" y="0.0" width="1" height="115"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,7 +45,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqU-7W-Hb8">
-                                <rect key="frame" x="85.5" y="537" width="203" height="30"/>
+                                <rect key="frame" x="85.5" y="535" width="203" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="13" maxX="10" maxY="12"/>
                                 <state key="normal" title="Login"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOT-gE-WVg">
@@ -40,36 +57,40 @@
                                     <constraint firstAttribute="width" constant="1" id="pIw-Dr-tj6"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patissier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-N0-lyY">
-                                <rect key="frame" x="79" y="115" width="216" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eqU-7W-Hb8" firstAttribute="centerX" secondItem="jMs-0D-mjo" secondAttribute="centerX" id="15K-d0-8tU"/>
+                            <constraint firstItem="AOT-gE-WVg" firstAttribute="leading" secondItem="qg7-Oi-lvd" secondAttribute="trailing" id="4dd-2T-X4f"/>
+                            <constraint firstItem="Tg4-Wl-fMb" firstAttribute="top" secondItem="jMs-0D-mjo" secondAttribute="top" id="4gt-Mc-aXl"/>
+                            <constraint firstItem="ptN-Yt-0e6" firstAttribute="top" secondItem="qg7-Oi-lvd" secondAttribute="bottom" id="A88-Ln-O1N"/>
+                            <constraint firstItem="Tg4-Wl-fMb" firstAttribute="leading" secondItem="jMs-0D-mjo" secondAttribute="leading" id="D4F-Lj-4cg"/>
+                            <constraint firstItem="qg7-Oi-lvd" firstAttribute="top" secondItem="jMs-0D-mjo" secondAttribute="top" id="Dfg-Db-ZfV"/>
                             <constraint firstItem="d6w-N0-lyY" firstAttribute="centerX" secondItem="jMs-0D-mjo" secondAttribute="centerX" id="E5e-33-hhy"/>
                             <constraint firstItem="fXh-Un-pQz" firstAttribute="height" secondItem="jMs-0D-mjo" secondAttribute="height" multiplier="115:667" id="JSq-FU-bS1"/>
                             <constraint firstItem="fXh-Un-pQz" firstAttribute="top" secondItem="jMs-0D-mjo" secondAttribute="top" id="MJE-vM-It2"/>
                             <constraint firstItem="d6w-N0-lyY" firstAttribute="width" secondItem="jMs-0D-mjo" secondAttribute="width" multiplier="216:375" id="XhC-5Q-PX6"/>
                             <constraint firstItem="d6w-N0-lyY" firstAttribute="top" secondItem="fXh-Un-pQz" secondAttribute="bottom" id="bIE-cc-tSf"/>
+                            <constraint firstItem="qg7-Oi-lvd" firstAttribute="leading" secondItem="jMs-0D-mjo" secondAttribute="leading" id="dI4-aA-Ilt"/>
+                            <constraint firstAttribute="trailing" secondItem="Tg4-Wl-fMb" secondAttribute="trailing" id="dkf-0U-0lp"/>
                             <constraint firstItem="eqU-7W-Hb8" firstAttribute="width" secondItem="jMs-0D-mjo" secondAttribute="width" multiplier="203:375" id="gVq-yk-BaX"/>
                             <constraint firstAttribute="trailing" secondItem="AOT-gE-WVg" secondAttribute="trailing" id="khC-27-hhZ"/>
                             <constraint firstAttribute="trailing" secondItem="fXh-Un-pQz" secondAttribute="trailing" id="qds-97-V03"/>
                             <constraint firstItem="AOT-gE-WVg" firstAttribute="height" secondItem="jMs-0D-mjo" secondAttribute="height" multiplier="100:667" id="s1P-hk-oTB"/>
                             <constraint firstItem="AOT-gE-WVg" firstAttribute="top" secondItem="eqU-7W-Hb8" secondAttribute="bottom" id="sBN-hf-rBu"/>
                             <constraint firstItem="ptN-Yt-0e6" firstAttribute="top" secondItem="AOT-gE-WVg" secondAttribute="bottom" id="xrQ-JV-zB9"/>
+                            <constraint firstItem="ptN-Yt-0e6" firstAttribute="top" secondItem="Tg4-Wl-fMb" secondAttribute="bottom" id="zMg-zv-52M"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gradientView" destination="qg7-Oi-lvd" id="n4D-lQ-2IQ"/>
                         <outlet property="loginButton" destination="eqU-7W-Hb8" id="ZAE-uA-ooX"/>
+                        <outlet property="titleLabel" destination="d6w-N0-lyY" id="UVu-Id-Bsr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fU-k7-eQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1090" y="-711"/>
+            <point key="canvasLocation" x="-1090.4000000000001" y="-711.09445277361328"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cci-S5-4Du">
@@ -180,4 +201,7 @@
             <point key="canvasLocation" x="142" y="-1129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="landing" width="443" height="667"/>
+    </resources>
 </document>
