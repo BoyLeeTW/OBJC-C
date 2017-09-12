@@ -23,9 +23,6 @@
     // Do any additional setup after loading the view.
     
     
-    
-    
-    
     [_loginButton addTarget:self action:@selector(fbLogIn) forControlEvents:UIControlEventTouchUpInside];
     
 }
@@ -94,7 +91,5 @@
     
     
 }
-
-
 
 @end
