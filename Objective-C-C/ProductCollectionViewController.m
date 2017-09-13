@@ -67,8 +67,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath:indexPath];
     
     cell.productNameLabel.text = @"BANG!!!";
-    
-    cell.backgroundColor=[UIColor greenColor];
+
     
     return cell;
 
