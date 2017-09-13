@@ -31,8 +31,11 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     self.navigationItem.title = @"Pâtissier";
 
-    UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
+        UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
 
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"Georgia-bold" size: 18.0]
+                                                                      }];
 
     [[self navigationController] navigationBar].layer.shadowColor = [UIColor blackColor].CGColor;
     [[self navigationController] navigationBar].layer.shadowOffset = CGSizeMake(0.0, 1.0);
