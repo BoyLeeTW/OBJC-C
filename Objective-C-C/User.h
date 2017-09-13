@@ -10,6 +10,7 @@
 
 @interface User : NSObject
 
+@property NSString *fbID;
 
 
 

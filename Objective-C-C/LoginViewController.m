@@ -103,10 +103,13 @@
             {
 
                 if ([FBSDKAccessToken currentAccessToken]) {
-                    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"email, name, picture"}]
+                    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"email, name, picture.type(large)"}]
                      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                          if (!error) {
                              NSLog(@"fetch user:%@", result);
+                             NSLog(@"Picture:%@", [result valueForKeyPath:@"picture"] );
+                             
+                             
                              [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"name"] forKey:@"name"];
                              [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"email"] forKey:@"email"];
                              [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"picture"] forKey:@"picture"];
