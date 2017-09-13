@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		933F78F21F66A4C400DC7395 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F78F01F66A4C400DC7395 /* LoginViewController.m */; };
+		933F78F51F66EE2B00DC7395 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F78F41F66EE2B00DC7395 /* ProductViewController.m */; };
 		9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */; };
 		A2835F3C1F661FC80061328A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3B1F661FC80061328A /* main.m */; };
 		A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3E1F661FC80061328A /* AppDelegate.m */; };
@@ -20,6 +22,10 @@
 		3CE3AD81910A4A52F57010AF /* Pods-Objective-C-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-C-C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C.debug.xcconfig"; sourceTree = "<group>"; };
 		40A121CAF367781A8B078FAC /* Pods-Objective-C-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-C-C.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C.release.xcconfig"; sourceTree = "<group>"; };
 		4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Objective-C-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		933F78F01F66A4C400DC7395 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		933F78F11F66A4C400DC7395 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		933F78F31F66EE2B00DC7395 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		933F78F41F66EE2B00DC7395 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,9 +89,11 @@
 			isa = PBXGroup;
 			children = (
 				A2835F3D1F661FC80061328A /* AppDelegate.h */,
+				933F78F01F66A4C400DC7395 /* LoginViewController.m */,
+				933F78F31F66EE2B00DC7395 /* ProductViewController.h */,
+				933F78F41F66EE2B00DC7395 /* ProductViewController.m */,
+				933F78F11F66A4C400DC7395 /* LoginViewController.h */,
 				A2835F3E1F661FC80061328A /* AppDelegate.m */,
-				933F78ED1F6672AC00DC7395 /* LoginViewController.h */,
-				933F78EE1F6672AC00DC7395 /* LoginViewController.m */,
 				A2835F401F661FC80061328A /* ViewController.h */,
 				A2835F411F661FC80061328A /* ViewController.m */,
 				A2835F431F661FC80061328A /* Main.storyboard */,
@@ -233,8 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				933F78EF1F6672AC00DC7395 /* LoginViewController.m in Sources */,
+				933F78F21F66A4C400DC7395 /* LoginViewController.m in Sources */,
 				A2835F421F661FC80061328A /* ViewController.m in Sources */,
+				933F78F51F66EE2B00DC7395 /* ProductViewController.m in Sources */,
 				A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */,
 				A2835F3C1F661FC80061328A /* main.m in Sources */,
 			);

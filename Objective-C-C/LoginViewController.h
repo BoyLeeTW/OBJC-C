@@ -11,5 +11,7 @@
 @interface LoginViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIView *gradientView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
