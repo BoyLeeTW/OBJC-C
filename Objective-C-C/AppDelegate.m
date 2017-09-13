@@ -27,9 +27,9 @@
         
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        UITabBarController *tabBarVC = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
+        UITabBarController *tabBarContoller = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
         
-        self.window.rootViewController = tabBarVC;
+        self.window.rootViewController = tabBarContoller;
         [self.window makeKeyAndVisible];
         return YES;
         

@@ -12,21 +12,69 @@
 #import "ProductViewController.h"
 @interface LoginViewController ()
 
+
 @end
 
 @implementation LoginViewController
-
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
+    [self setUpUI];
     
     
     [_loginButton addTarget:self action:@selector(fbLogIn) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)setUpUI {
+    
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    
+    gradient.frame = self.view.bounds;
+    
+    gradient.colors = [NSArray arrayWithObjects:
+                       (id)[[UIColor colorWithRed:3/255.0 green:63/255.0 blue:122/255.0 alpha:1] CGColor],
+                       (id)[[UIColor colorWithRed:4/255.0 green:107/255.0 blue:149/255.0 alpha:1] CGColor],nil];
+    
+    [self.gradientView.layer insertSublayer:gradient atIndex:0];
+    
+    self.gradientView.alpha = 0.8;
+    
+    
+    _loginButton.backgroundColor = [UIColor colorWithRed:255/255.0 green:53/255.0 blue:71/255.0 alpha:1.0];
+    
+    [_loginButton setTitle:@"Sign In with Facebook" forState:UIControlStateNormal];
+    
+    [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    _loginButton.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.1].CGColor;
+    
+    _loginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    
+    _loginButton.layer.shadowRadius = 2;
+    
+    _loginButton.layer.shadowOpacity = 1.0;
+    
+    _loginButton.layer.cornerRadius = 2.0;
+    
+    _loginButton.clipsToBounds = YES;
+    
+    _loginButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    _loginButton.titleLabel.minimumScaleFactor = 0.1;
+    
+    
+    self.titleLabel.text = @"Pâtissier";
+    
+    
+    
+    
+    
+    
+    
     
 }
 
@@ -94,7 +142,5 @@
     
     
 }
-
-
 
 @end
