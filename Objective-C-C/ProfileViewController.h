@@ -20,6 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *purchasedTableView;
 
-@property (weak, nonatomic) IBOutlet UICollectionView *favoriteTableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *favoriteCollectionView;
 
 @end

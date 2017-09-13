@@ -107,13 +107,15 @@
                      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                          if (!error) {
                              NSLog(@"fetch user:%@", result);
-                             NSLog(@"Picture:%@", [result valueForKeyPath:@"picture"] );
+                             NSLog(@"Picture:%@", [[[result valueForKeyPath:@"picture"] valueForKeyPath:@"data"] valueForKeyPath:@"url"]);
                              
                              
                              [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"name"] forKey:@"name"];
                              [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"email"] forKey:@"email"];
-                             [[NSUserDefaults standardUserDefaults] setObject:[result valueForKeyPath:@"picture"] forKey:@"picture"];
+                             [[NSUserDefaults standardUserDefaults] setObject:[[[result valueForKeyPath:@"picture"] valueForKeyPath:@"data"] valueForKeyPath:@"url"] forKey:@"pictureURL"];
                              [[NSUserDefaults standardUserDefaults] setObject:[FBSDKAccessToken currentAccessToken].tokenString forKey:@"token"];
+                             
+                             [NSUserDefaults.standardUserDefaults synchronize];
                              
                              UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
                              UITabBarController *tabBarVC = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];

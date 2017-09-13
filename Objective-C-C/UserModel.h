@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface UserModel : NSObject
 
 @property NSString *fbID;
 
+@property NSString *fbPhotoURLString;
 
+@property NSString *fbName;
+
+- (id)initWithFbId:(NSString*) fbId fbName:(NSString*) name fbPhotoURLString:(NSString*) photoURLString;
 
 
 
