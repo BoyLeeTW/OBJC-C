@@ -70,12 +70,6 @@
     self.titleLabel.text = @"Pâtissier";
     
     
-    
-    
-    
-    
-    
-    
 }
 
 
