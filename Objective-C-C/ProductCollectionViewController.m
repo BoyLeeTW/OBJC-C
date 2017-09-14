@@ -21,23 +21,80 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.cellLayout = [[UICollectionViewFlowLayout alloc] init];
-    self.cellLayout.sectionInset = UIEdgeInsetsMake(21.0, 20.0, 14.0, 20.0);
-    self.cellLayout.itemSize = CGSizeMake(154.0, 160.0);
-    self.cellLayout.minimumInteritemSpacing = 0;
-    self.cellLayout.minimumLineSpacing = 21.5;
-    self.collectionView.collectionViewLayout = self.cellLayout;
     
+    [self setUpNavigationBar];
+
+    [self setUpCellLayout];
+
+}
+
+- (void)setUpNavigationBar {
+
+    //set up status bar to light content style
+    UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
+
+    //set up navigation bar title
     self.navigationItem.title = @"Pâtissier";
 
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"Georgia-bold" size: 18.0]
+                                                                      }];
+
+    [[self navigationController] navigationBar].layer.shadowColor = [UIColor blackColor].CGColor;
+
+    [[self navigationController] navigationBar].layer.shadowOffset = CGSizeMake(0.0, 1.0);
+
+    [[self navigationController] navigationBar].layer.shadowRadius = 2.0;
+
+    [[self navigationController] navigationBar].layer.shadowOpacity = 1.0;
+
+    [[self navigationController] navigationBar].layer.masksToBounds = NO;
+
+    // set up navigation bar gradient
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+
+    gradientLayer.frame = CGRectMake(self.navigationController.navigationBar.bounds.origin.x,
+                                     self.navigationController.navigationBar.bounds.origin.y,
+                                     self.navigationController.navigationBar.bounds.size.width,
+                                     self.navigationController.navigationBar.bounds.size.height + 20);
+
+    gradientLayer.colors = [NSArray arrayWithObjects:
+                            (id)[[UIColor colorWithRed: 3.0 / 255.0 green: 63.0 / 255.0 blue: 122.0 / 255.0 alpha: 1.0] CGColor ],
+                            (id) [[UIColor colorWithRed: 4.0 /255.0 green: 107.0 / 255.0 blue: 149.0 / 255.0 alpha: 1.0] CGColor],
+                            nil];
+
+    gradientLayer.startPoint = CGPointMake(0.0, 0.5);
+
+    gradientLayer.endPoint = CGPointMake(1.0, 0.5);
+    
+    // Render the gradient to UIImage
+    UIGraphicsBeginImageContext(gradientLayer.frame.size);
+
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+
+    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+    
+    [self.navigationController.navigationBar setBackgroundImage: gradientImage forBarMetrics: UIBarMetricsDefault];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+-(void)setUpCellLayout {
 
+    self.cellLayout = [[UICollectionViewFlowLayout alloc] init];
+
+    self.cellLayout.sectionInset = UIEdgeInsetsMake(21.0, 20.0, 14.0, 20.0);
+
+    self.cellLayout.itemSize = CGSizeMake(154.0, 160.0);
+
+    self.cellLayout.minimumInteritemSpacing = 0;
+
+    self.cellLayout.minimumLineSpacing = 21.5;
+
+    self.collectionView.collectionViewLayout = self.cellLayout;
+
+}
 /*
 #pragma mark - Navigation
 
@@ -65,11 +122,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath:indexPath];
-    
-    cell.productNameLabel.text = @"BANG!!!";
-    
-    cell.backgroundColor=[UIColor greenColor];
-    
+
     return cell;
 
 }
