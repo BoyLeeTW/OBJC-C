@@ -7,23 +7,41 @@
 //
 
 #import "CommentsTableViewController.h"
-
+#import <Foundation/Foundation.h>
 @interface CommentsTableViewController ()
 
 @end
 
 @implementation CommentsTableViewController
 
+@synthesize productId = _productId;
+
+@synthesize comments = _comments;
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self loadCommentsData];
+    
+    [self.tableView registerClass:[ProductInfoTableViewCell class] forCellReuseIdentifier:@"productInfoCell"];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)loadProductData {
+    
+    
+    
+}
+
+
 
 - (void)loadCommentsData {
     
@@ -32,8 +50,8 @@
        
         if (!error) {
             
-            NSLog(@"%@", comments);
-            
+            self.comments = comments;
+            [self.tableView reloadData];
         }
         
         
@@ -46,24 +64,101 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    if (section == 0) {
+        
+        commentsTableViewSection = productInfo;
+        
+        
+    } else {
+        
+        commentsTableViewSection = comments;
+        
+    }
+    
+    switch (commentsTableViewSection) {
+        case productInfo:
+           
+            return 1;
+
+            
+        case comments:
+            
+            return [self.comments count];
+
+            
+        default:
+            break;
+    }
+    
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *productInfoCellIdentifier = @"productInfoCell";
     
-    return cell;
+    
+    if (indexPath.section == 0) {
+        
+        commentsTableViewSection = productInfo;
+        
+        
+    } else {
+        
+        commentsTableViewSection = comments;
+        
+    }
+    
+    
+    switch (commentsTableViewSection) {
+        case productInfo:
+        {
+        
+            ProductInfoTableViewCell *cell = (ProductInfoTableViewCell*)[tableView dequeueReusableCellWithIdentifier: @"productInfoCell" forIndexPath:indexPath];
+            
+            if (cell == nil) {
+                
+                cell = [[ProductInfoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:productInfoCellIdentifier];
+                
+            }
+            
+            cell.productNameLabel.backgroundColor = [UIColor blueColor];
+            
+            
+            cell.productPriceLabel.text = @"1000";
+            
+            return cell;
+            
+        }
+        case comments:
+            
+            
+            
+            
+            
+            
+            
+        default:
+            break;
+    }
+
+    
+    
+    return [[UITableViewCell alloc] init];
+    
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 200;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -14,8 +14,15 @@
 
 @property (nonatomic, strong) UILabel *productPriceLabel;
 
+@property (nonatomic, strong) UIImageView *productImageView;
 
+@property (nonatomic, strong) UIButton *addToCartButton;
 
+@property (nonatomic, strong) UIView *commentLineBlackView;
+
+@property (nonatomic, strong) UIView *commentLineWhiteView;
+
+@property (nonatomic, strong) UILabel *commentLineLabel;
 
 
 @end

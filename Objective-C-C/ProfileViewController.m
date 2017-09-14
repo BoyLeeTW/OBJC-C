@@ -18,7 +18,6 @@
     [super viewDidLoad];
     
     
-    
     [self setUpUI];
     
     [self.changeToPurchasedButton addTarget:self action:@selector(pressChangeToPurchased) forControlEvents:UIControlEventTouchUpInside];
