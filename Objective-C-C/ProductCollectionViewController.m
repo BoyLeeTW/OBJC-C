@@ -25,32 +25,39 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [self setUpNavigationBar];
 
     [self setUpCellLayout];
+
 }
 
 - (void)setUpNavigationBar {
 
-    self.navigationItem.title = @"Pâtissier";
+    //set up status bar to light content style
+    UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
 
-        UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
+    //set up navigation bar title
+    self.navigationItem.title = @"Pâtissier";
 
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont fontWithName:@"Georgia-bold" size: 18.0]
                                                                       }];
 
     [[self navigationController] navigationBar].layer.shadowColor = [UIColor blackColor].CGColor;
+
     [[self navigationController] navigationBar].layer.shadowOffset = CGSizeMake(0.0, 1.0);
+
     [[self navigationController] navigationBar].layer.shadowRadius = 2.0;
+
     [[self navigationController] navigationBar].layer.shadowOpacity = 1.0;
+
     [[self navigationController] navigationBar].layer.masksToBounds = NO;
 
-    // Setup the gradient
+    // set up navigation bar gradient
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
 
     gradientLayer.frame = CGRectMake(self.navigationController.navigationBar.bounds.origin.x,
                                      self.navigationController.navigationBar.bounds.origin.y,
                                      self.navigationController.navigationBar.bounds.size.width,
                                      self.navigationController.navigationBar.bounds.size.height + 20);
-    
+
     gradientLayer.colors = [NSArray arrayWithObjects:
                             (id)[[UIColor colorWithRed: 3.0 / 255.0 green: 63.0 / 255.0 blue: 122.0 / 255.0 alpha: 1.0] CGColor ],
                             (id) [[UIColor colorWithRed: 4.0 /255.0 green: 107.0 / 255.0 blue: 149.0 / 255.0 alpha: 1.0] CGColor],
@@ -76,10 +83,15 @@ static NSString * const reuseIdentifier = @"ProductCell";
 -(void)setUpCellLayout {
 
     self.cellLayout = [[UICollectionViewFlowLayout alloc] init];
+
     self.cellLayout.sectionInset = UIEdgeInsetsMake(21.0, 20.0, 14.0, 20.0);
+
     self.cellLayout.itemSize = CGSizeMake(154.0, 160.0);
+
     self.cellLayout.minimumInteritemSpacing = 0;
+
     self.cellLayout.minimumLineSpacing = 21.5;
+
     self.collectionView.collectionViewLayout = self.cellLayout;
 
 }
