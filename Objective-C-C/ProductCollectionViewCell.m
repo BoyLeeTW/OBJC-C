@@ -39,21 +39,45 @@
 
 - (void) setUpIsFavoriteProductImageView {
     
-    self.isFavoriteProductImageView.tintColor = [UIColor colorWithRed: 165.0 / 255.0
+    self.isFavoriteProductButton.tintColor = [UIColor colorWithRed: 165.0 / 255.0
                                                                 green: 170.0 / 255.0
                                                                  blue: 178.0 / 255.0
                                                                 alpha: 1.0];
 
-    self.isFavoriteProductImageView.layer.borderColor = [UIColor colorWithRed: 165.0 / 255.0
+    self.isFavoriteProductButton.layer.borderColor = [UIColor colorWithRed: 165.0 / 255.0
                                                                         green: 170.0 / 255.0
                                                                          blue: 178.0 / 255.0
                                                                         alpha: 1.0].CGColor;
 
-    self.isFavoriteProductImageView.layer.borderWidth = 0.2;
+    self.isFavoriteProductButton.layer.borderWidth = 0.2;
 
-    self.isFavoriteProductImageView.layer.cornerRadius = 4;
+    self.isFavoriteProductButton.layer.cornerRadius = 4;
+
+    [self.isFavoriteProductButton addTarget:self action:@selector(touchIsFavoriteButton:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.isFavoriteProductButton setUserInteractionEnabled: YES];
+
+    [self.isFavoriteProductButton setMultipleTouchEnabled: YES];
 
 }
+
+- (void)touchIsFavoriteButton: (UIButton *)sender {
+    
+    if (sender.tintColor == UIColor.redColor) {
+        
+        sender.tintColor = [UIColor colorWithRed: 165.0 / 255.0
+                                           green: 170.0 / 255.0
+                                            blue: 178.0 / 255.0
+                                           alpha: 1.0];
+
+    } else {
+        
+        sender.tintColor = [UIColor redColor];
+        
+    }
+    
+}
+
 
 - (void) setUpProductImageView {
 
