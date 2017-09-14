@@ -10,8 +10,12 @@
 
 @implementation Product
 
+@synthesize productId = _productId;
+@synthesize name = _name;
+@synthesize price = _price;
+
 - (id)initWithName:(NSString *)productId name:(NSString *)name price:(NSNumber *)price {
-    
+
     self = [super init];
     
     if (self) {
