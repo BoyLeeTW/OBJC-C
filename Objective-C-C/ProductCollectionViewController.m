@@ -8,6 +8,8 @@
 
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
+#import "ProductProvider.h"
+#import "ProductModel.h"
 
 @interface ProductCollectionViewController ()
 
@@ -19,6 +21,8 @@
 
 static NSString * const reuseIdentifier = @"ProductCell";
 
+@synthesize productProvider;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -26,6 +30,15 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     [self setUpCellLayout];
 
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    
+    productProvider = [[ProductProvider alloc] init];
+    
+    productProvider.delegate = self;
+    
+    productProvider.requestProduct;
 }
 
 - (void)setUpNavigationBar {
@@ -92,8 +105,25 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     self.cellLayout.minimumLineSpacing = 21.5;
 
+
     self.collectionView.collectionViewLayout = self.cellLayout;
 
+    self.collectionView.collectionViewLayout = self.cellLayout;
+
+
+#pragma mark <ProductProviderDelegate>
+-(void) didGetProducts:(NSArray *)fetchedProducts {
+    
+    _products = fetchedProducts;
+    
+    NSLog(@"Delegate requested products");
+    
+    [[self collectionView ] reloadData];
+}
+
+-(void) didFail:(NSError *)error {
+    
+    NSLog(@"%@", error);
 }
 /*
 #pragma mark - Navigation
@@ -122,7 +152,39 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath:indexPath];
+    
+    ProductModel *productInCell = [_products objectAtIndex: indexPath.row];
+    
+    cell.productNameLabel.text = productInCell.name;
+    
+    NSNumber *productPrice = productInCell.price;
+    
+    NSString *priceToString = [productPrice stringValue];
+    
+    cell.productPriceLabel.text = priceToString;
 
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSString *baseURL = @"http://52.198.40.72/patissier/products/";
+        
+        NSString *productID = productInCell.productId;
+        
+        NSString *productPreviewURL = [NSString stringWithFormat:@"%@%@%@", baseURL, productID, @"/preview.jpg"];
+        
+        NSURL *imageUrl = [NSURL URLWithString:productPreviewURL];
+        
+        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+        
+        UIImage *productImage = [UIImage imageWithData:imageData];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [cell.productImageView setContentMode:UIViewContentModeScaleAspectFill];
+            
+            [cell.productImageView setImage:productImage];
+        });
+        
+    });
     return cell;
 
 }
@@ -159,3 +221,4 @@ static NSString * const reuseIdentifier = @"ProductCell";
 */
 
 @end
+
