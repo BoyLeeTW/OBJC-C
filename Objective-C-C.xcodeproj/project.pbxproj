@@ -17,6 +17,9 @@
 		9304C61A1F6A171100C756BE /* ProductInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9304C6191F6A171100C756BE /* ProductInfoTableViewCell.m */; };
 		933F78F21F66A4C400DC7395 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F78F01F66A4C400DC7395 /* LoginViewController.m */; };
 		933F78F51F66EE2B00DC7395 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F78F41F66EE2B00DC7395 /* ProductViewController.m */; };
+		93E97CDB1F6AC17800739230 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E97CDA1F6AC17800739230 /* CommentTableViewCell.m */; };
+		93FFA9511F6B84EB006F8106 /* CommentUserProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FFA9501F6B84EB006F8106 /* CommentUserProvider.m */; };
+		93FFA9541F6BA0A1006F8106 /* CommentUserPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FFA9531F6BA0A1006F8106 /* CommentUserPhotoModel.m */; };
 		9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */; };
 		A24A624B1F690101007EC62F /* luximr.dataset in Resources */ = {isa = PBXBuildFile; fileRef = A24A624A1F690101007EC62F /* luximr.dataset */; };
 		A25EC5411F6A53D4005CA20A /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A25EC5401F6A53D4005CA20A /* ProductModel.m */; };
@@ -54,9 +57,15 @@
 		933F78F11F66A4C400DC7395 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		933F78F31F66EE2B00DC7395 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
 		933F78F41F66EE2B00DC7395 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		93E97CD91F6AC17800739230 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		93E97CDA1F6AC17800739230 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		93FFA94F1F6B84EB006F8106 /* CommentUserProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentUserProvider.h; sourceTree = "<group>"; };
+		93FFA9501F6B84EB006F8106 /* CommentUserProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentUserProvider.m; sourceTree = "<group>"; };
+		93FFA9521F6BA0A1006F8106 /* CommentUserPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentUserPhotoModel.h; sourceTree = "<group>"; };
+		93FFA9531F6BA0A1006F8106 /* CommentUserPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentUserPhotoModel.m; sourceTree = "<group>"; };
 		A24A624A1F690101007EC62F /* luximr.dataset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luximr.dataset; sourceTree = "<group>"; };
-		A25EC5401F6A53D4005CA20A /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
-		A25EC5421F6A53EC005CA20A /* ProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
+		A25EC5401F6A53D4005CA20A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		A25EC5421F6A53EC005CA20A /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,10 +143,14 @@
 		9304C6031F69157D00C756BE /* CommentAPI */ = {
 			isa = PBXGroup;
 			children = (
+				93FFA94F1F6B84EB006F8106 /* CommentUserProvider.h */,
+				93FFA9501F6B84EB006F8106 /* CommentUserProvider.m */,
 				9304C6051F6921E300C756BE /* CommentProvider.h */,
 				9304C6061F6921E300C756BE /* CommentProvider.m */,
 				9304C60E1F69351500C756BE /* CommentModel.h */,
 				9304C60F1F69351500C756BE /* CommentModel.m */,
+				93FFA9521F6BA0A1006F8106 /* CommentUserPhotoModel.h */,
+				93FFA9531F6BA0A1006F8106 /* CommentUserPhotoModel.m */,
 			);
 			name = CommentAPI;
 			sourceTree = "<group>";
@@ -158,6 +171,8 @@
 				9304C6121F698EAA00C756BE /* CommentsTableViewController.m */,
 				9304C6181F6A171100C756BE /* ProductInfoTableViewCell.h */,
 				9304C6191F6A171100C756BE /* ProductInfoTableViewCell.m */,
+				93E97CD91F6AC17800739230 /* CommentTableViewCell.h */,
+				93E97CDA1F6AC17800739230 /* CommentTableViewCell.m */,
 			);
 			name = CommentsTableView;
 			sourceTree = "<group>";
@@ -185,6 +200,8 @@
 			children = (
 				A24A624A1F690101007EC62F /* luximr.dataset */,
 				A2835F3D1F661FC80061328A /* AppDelegate.h */,
+				A25EC5421F6A53EC005CA20A /* Product.h */,
+				A25EC5401F6A53D4005CA20A /* Product.m */,
 				933F78F01F66A4C400DC7395 /* LoginViewController.m */,
 				933F78F31F66EE2B00DC7395 /* ProductViewController.h */,
 				933F78F41F66EE2B00DC7395 /* ProductViewController.m */,
@@ -356,12 +373,15 @@
 				A2835F421F661FC80061328A /* ViewController.m in Sources */,
 				A2D53AD71F68CBA300D5DBA6 /* ProductCollectionViewCell.m in Sources */,
 				A2D53AD41F68CB8800D5DBA6 /* ProductCollectionViewController.m in Sources */,
+				93FFA9541F6BA0A1006F8106 /* CommentUserPhotoModel.m in Sources */,
+				93E97CDB1F6AC17800739230 /* CommentTableViewCell.m in Sources */,
 				9304C61A1F6A171100C756BE /* ProductInfoTableViewCell.m in Sources */,
 				73EFC9751F6B804600385903 /* ProductProvider.m in Sources */,
 				933F78F51F66EE2B00DC7395 /* ProductViewController.m in Sources */,
 				A25EC5411F6A53D4005CA20A /* ProductModel.m in Sources */,
 				A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */,
 				9304C60D1F6926A600C756BE /* ServerModel.m in Sources */,
+				93FFA9511F6B84EB006F8106 /* CommentUserProvider.m in Sources */,
 				9304C6101F69351500C756BE /* CommentModel.m in Sources */,
 				9304C5FE1F68CF9E00C756BE /* ProfileViewController.m in Sources */,
 				A2835F3C1F661FC80061328A /* main.m in Sources */,

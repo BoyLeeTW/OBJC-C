@@ -39,16 +39,14 @@
         self.commentLineWhiteView = [[UIView alloc] init];
         self.commentLineBlackView = [[UIView alloc] init];
         
-        [self addSubview: self.productNameLabel];
-        [self addSubview:self.productPriceLabel];
-        [self addSubview:self.productImageView];
-        [self addSubview:self.addToCartButton];
-        [self addSubview:self.commentLineLabel];
-        [self addSubview:self.commentLineBlackView];
-        [self addSubview:self.commentLineWhiteView];
+        [self.contentView addSubview: self.productNameLabel];
+        [self.contentView addSubview:self.productPriceLabel];
+        [self.contentView addSubview:self.productImageView];
+        [self.contentView addSubview:self.addToCartButton];
         
-        
-        
+        [self.contentView addSubview:self.commentLineBlackView];
+        [self.contentView addSubview:self.commentLineWhiteView];
+        [self.contentView addSubview:self.commentLineLabel];
         
     }
     
@@ -109,14 +107,51 @@
     self.productPriceLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
     
+    [self.commentLineBlackView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-4].active = YES;
+    
+    [self.commentLineBlackView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:20].active = YES;
+    
+    [self.commentLineBlackView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-20].active = YES;
+    
+    [self.commentLineBlackView.heightAnchor constraintEqualToConstant:2.5].active = YES;
+    
+    self.commentLineBlackView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.commentLineBlackView.backgroundColor = [UIColor blackColor];
     
     
+    [self.commentLineWhiteView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-4.5].active = YES;
+    
+    [self.commentLineWhiteView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:20].active = YES;
+    
+    [self.commentLineWhiteView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-20].active = YES;
+    
+    [self.commentLineWhiteView.heightAnchor constraintEqualToConstant:1.5].active = YES;
+    
+    self.commentLineWhiteView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.commentLineWhiteView.backgroundColor = [UIColor whiteColor];
     
     
+    [self.commentLineLabel.leadingAnchor constraintEqualToAnchor:self.commentLineBlackView.leadingAnchor constant:45].active = YES;
     
+    [self.commentLineLabel.bottomAnchor constraintEqualToAnchor:self.commentLineBlackView.bottomAnchor constant:0].active = YES;
     
+    [self.commentLineLabel.widthAnchor constraintEqualToConstant:self.contentView.bounds.size.width * 93 / 375].active = YES;
     
+    [self.commentLineLabel.heightAnchor constraintEqualToConstant:19].active = YES;
     
+    self.commentLineLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.commentLineLabel.text = @"Comments";
+    
+    self.commentLineLabel.textColor = [UIColor blackColor];
+    
+    self.commentLineLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.commentLineLabel.backgroundColor = [UIColor whiteColor];
+    
+
 }
 
 
