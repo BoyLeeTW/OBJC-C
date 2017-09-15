@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductProvider.h"
+#import "CommentsTableViewController.h"
 
 @interface ProductCollectionViewController : UICollectionViewController <ProductManagerDelegate>
 
