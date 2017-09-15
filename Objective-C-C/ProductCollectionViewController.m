@@ -95,7 +95,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 }
 
--(void)setUpCellLayout {
+- (void)setUpCellLayout {
 
     self.cellLayout = [[UICollectionViewFlowLayout alloc] init];
 
@@ -259,6 +259,10 @@ static NSString * const reuseIdentifier = @"ProductCell";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

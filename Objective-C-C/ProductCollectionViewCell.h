@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIView *productLowerBlockView;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productPriceLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *isFavoriteProductImageView;
+@property (weak, nonatomic) IBOutlet UIButton *isFavoriteProductButton;
 
 @end

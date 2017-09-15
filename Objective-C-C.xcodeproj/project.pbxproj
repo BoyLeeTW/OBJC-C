@@ -66,6 +66,7 @@
 		A24A624A1F690101007EC62F /* luximr.dataset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luximr.dataset; sourceTree = "<group>"; };
 		A25EC5401F6A53D4005CA20A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		A25EC5421F6A53EC005CA20A /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		A268AA3D1F6BA13000DFFC0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A268AA3E1F6BA13000DFFC0F /* CoreData.framework in Frameworks */,
 				9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +99,7 @@
 		04C402C2E035C9021ABA08AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A268AA3D1F6BA13000DFFC0F /* CoreData.framework */,
 				4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */,
 			);
 			name = Frameworks;
