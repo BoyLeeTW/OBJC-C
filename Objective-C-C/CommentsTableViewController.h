@@ -10,7 +10,9 @@
 #import <Foundation/Foundation.h>
 #import "CommentProvider.h"
 #import "ProductInfoTableViewCell.h"
+#import "CommentTableViewCell.h"
 #import "CommentModel.h"
+#import "CommentUserProvider.h"
 
 typedef enum {
     

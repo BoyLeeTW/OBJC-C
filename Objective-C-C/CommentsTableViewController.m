@@ -18,16 +18,23 @@
 
 @synthesize comments = _comments;
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self loadCommentsData];
     
     [self.tableView registerClass:[ProductInfoTableViewCell class] forCellReuseIdentifier:@"productInfoCell"];
+    [self.tableView registerClass:[CommentTableViewCell class] forCellReuseIdentifier:@"commentCell"];
     
+    self.tableView.estimatedRowHeight = 300.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+   
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +49,34 @@
 }
 
 
+//- (UIImage)loadCommentUserPhotoWithUserId:(NSString*)userId {
+//    
+//    CommentUserProvider *commentUserProvider = CommentUserProvider.sharedInstance;
+//    
+//    [commentUserProvider getProductCommentWithUserId:userId withCompletionHandler:^(UIImage * _Nullable userPhoto, NSError * _Nullable error) {
+//        
+//        
+//        
+//        if(!error) {
+//            
+//            
+//            return userPhoto;
+//            
+//        } else {
+//            
+//            
+//            return [[UIImage alloc] init];
+//            
+//        }
+//        
+//        
+//        
+//    }];
+//     
+//     return [[UIImage alloc] init];
+//    
+//}
+
 
 - (void)loadCommentsData {
     
@@ -51,7 +86,15 @@
         if (!error) {
             
             self.comments = comments;
-            [self.tableView reloadData];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.tableView.estimatedRowHeight = 40.0; // for example. Set your average height
+                self.tableView.rowHeight = UITableViewAutomaticDimension;
+                
+                [self.tableView reloadData];
+            });
+            
+           
         }
         
         
@@ -89,7 +132,8 @@
             
         case comments:
             
-            return [self.comments count];
+//            return [self.comments count];
+            return 10;
 
             
         default:
@@ -103,6 +147,7 @@
     
     static NSString *productInfoCellIdentifier = @"productInfoCell";
     
+    static NSString *commentCellIdentifier = @"commentCell";
     
     if (indexPath.section == 0) {
         
@@ -120,7 +165,7 @@
         case productInfo:
         {
         
-            ProductInfoTableViewCell *cell = (ProductInfoTableViewCell*)[tableView dequeueReusableCellWithIdentifier: @"productInfoCell" forIndexPath:indexPath];
+            ProductInfoTableViewCell *cell = (ProductInfoTableViewCell*)[tableView dequeueReusableCellWithIdentifier: productInfoCellIdentifier forIndexPath:indexPath];
             
             if (cell == nil) {
                 
@@ -137,13 +182,42 @@
             
         }
         case comments:
+        {
+            CommentTableViewCell *cell = (CommentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:commentCellIdentifier forIndexPath:indexPath];
+            
+            if (cell == nil) {
+                
+                cell = [[CommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:commentCellIdentifier];
+                
+            }
+            
+
+            
+            dispatch_async(dispatch_get_global_queue(0,0), ^{
+                
+                NSString *path = [NSString stringWithFormat:@"%@%@%@%@", @"http://52.198.40.72/patissier", @"/users/", [[self.comments objectAtIndex:indexPath.row] userId], @"/picture.jpg"];
+                
+                NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: path]];
+                if ( data != nil )
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // WARNING: is the cell still using the same data by this point??
+                        cell.userPhotoImageView.image = [UIImage imageWithData:data];
+                    });
+                    
+                }
+            });
             
             
+
             
+            cell.userNameLabel.text = [[self.comments objectAtIndex:indexPath.row] userName];
             
+            cell.commentContentLabel.text = [[self.comments objectAtIndex:indexPath.row] userComment];
             
+            return cell;
             
-            
+        }
         default:
             break;
     }
@@ -156,7 +230,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 200;
+    if (indexPath.section == 0) {
+        
+        return 152;
+        
+    } else {
+
+        return UITableViewAutomaticDimension;
+        
+    }
+    
+    
 }
 
 
