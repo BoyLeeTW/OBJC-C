@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Marvin Lin. All rights reserved.
 //
 
-#import "Product.h"
+#import "ProductModel.h"
 
-@implementation Product
+@implementation ProductModel
 
 @synthesize productId = _productId;
 @synthesize name = _name;

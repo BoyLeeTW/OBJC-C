@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Product : NSObject
+@interface ProductModel : NSObject
 
 @property NSString *productId;
 @property NSString *name;

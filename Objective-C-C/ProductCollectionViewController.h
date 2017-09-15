@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductProvider.h"
 
-@interface ProductCollectionViewController : UICollectionViewController
+@interface ProductCollectionViewController : UICollectionViewController <ProductManagerDelegate>
+
+@property (strong, atomic, readwrite) ProductProvider *productProvider;
+@property NSMutableArray *products;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73EFC9751F6B804600385903 /* ProductProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EFC9741F6B804600385903 /* ProductProvider.m */; };
 		9304C5FE1F68CF9E00C756BE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9304C5FD1F68CF9E00C756BE /* ProfileViewController.m */; };
 		9304C6011F68DAC300C756BE /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9304C6001F68DAC300C756BE /* UserModel.m */; };
 		9304C6071F6921E300C756BE /* CommentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9304C6061F6921E300C756BE /* CommentProvider.m */; };
@@ -18,7 +19,7 @@
 		933F78F51F66EE2B00DC7395 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933F78F41F66EE2B00DC7395 /* ProductViewController.m */; };
 		9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */; };
 		A24A624B1F690101007EC62F /* luximr.dataset in Resources */ = {isa = PBXBuildFile; fileRef = A24A624A1F690101007EC62F /* luximr.dataset */; };
-		A25EC5411F6A53D4005CA20A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = A25EC5401F6A53D4005CA20A /* Product.m */; };
+		A25EC5411F6A53D4005CA20A /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A25EC5401F6A53D4005CA20A /* ProductModel.m */; };
 		A2835F3C1F661FC80061328A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3B1F661FC80061328A /* main.m */; };
 		A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3E1F661FC80061328A /* AppDelegate.m */; };
 		A2835F421F661FC80061328A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F411F661FC80061328A /* ViewController.m */; };
@@ -33,6 +34,8 @@
 		3CE3AD81910A4A52F57010AF /* Pods-Objective-C-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-C-C.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C.debug.xcconfig"; sourceTree = "<group>"; };
 		40A121CAF367781A8B078FAC /* Pods-Objective-C-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-C-C.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-C-C/Pods-Objective-C-C.release.xcconfig"; sourceTree = "<group>"; };
 		4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Objective-C-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EFC9731F6B804600385903 /* ProductProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductProvider.h; sourceTree = "<group>"; };
+		73EFC9741F6B804600385903 /* ProductProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductProvider.m; sourceTree = "<group>"; };
 		9304C5FC1F68CF9E00C756BE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		9304C5FD1F68CF9E00C756BE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		9304C5FF1F68DAC300C756BE /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -52,8 +55,8 @@
 		933F78F31F66EE2B00DC7395 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
 		933F78F41F66EE2B00DC7395 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		A24A624A1F690101007EC62F /* luximr.dataset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luximr.dataset; sourceTree = "<group>"; };
-		A25EC5401F6A53D4005CA20A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		A25EC5421F6A53EC005CA20A /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		A25EC5401F6A53D4005CA20A /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
+		A25EC5421F6A53EC005CA20A /* ProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +100,17 @@
 				40A121CAF367781A8B078FAC /* Pods-Objective-C-C.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		73EFC9721F6B7FF400385903 /* ProductAPI */ = {
+			isa = PBXGroup;
+			children = (
+				73EFC9731F6B804600385903 /* ProductProvider.h */,
+				73EFC9741F6B804600385903 /* ProductProvider.m */,
+				A25EC5421F6A53EC005CA20A /* ProductModel.h */,
+				A25EC5401F6A53D4005CA20A /* ProductModel.m */,
+			);
+			name = ProductAPI;
 			sourceTree = "<group>";
 		};
 		9304C5FB1F68CEB100C756BE /* Profile */ = {
@@ -171,8 +185,6 @@
 			children = (
 				A24A624A1F690101007EC62F /* luximr.dataset */,
 				A2835F3D1F661FC80061328A /* AppDelegate.h */,
-				A25EC5421F6A53EC005CA20A /* Product.h */,
-				A25EC5401F6A53D4005CA20A /* Product.m */,
 				933F78F01F66A4C400DC7395 /* LoginViewController.m */,
 				933F78F31F66EE2B00DC7395 /* ProductViewController.h */,
 				933F78F41F66EE2B00DC7395 /* ProductViewController.m */,
@@ -189,8 +201,9 @@
 				9304C6141F6A12A700C756BE /* CommentsTableView */,
 				9304C6031F69157D00C756BE /* CommentAPI */,
 				9304C6041F6916F600C756BE /* API */,
-				A2835F431F661FC80061328A /* Main.storyboard */,
+				73EFC9721F6B7FF400385903 /* ProductAPI */,
 				A2835F461F661FC80061328A /* Assets.xcassets */,
+				A2835F431F661FC80061328A /* Main.storyboard */,
 				A2835F481F661FC80061328A /* LaunchScreen.storyboard */,
 				A2835F4B1F661FC80061328A /* Info.plist */,
 				A2835F3A1F661FC80061328A /* Supporting Files */,
@@ -344,8 +357,9 @@
 				A2D53AD71F68CBA300D5DBA6 /* ProductCollectionViewCell.m in Sources */,
 				A2D53AD41F68CB8800D5DBA6 /* ProductCollectionViewController.m in Sources */,
 				9304C61A1F6A171100C756BE /* ProductInfoTableViewCell.m in Sources */,
+				73EFC9751F6B804600385903 /* ProductProvider.m in Sources */,
 				933F78F51F66EE2B00DC7395 /* ProductViewController.m in Sources */,
-				A25EC5411F6A53D4005CA20A /* Product.m in Sources */,
+				A25EC5411F6A53D4005CA20A /* ProductModel.m in Sources */,
 				A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */,
 				9304C60D1F6926A600C756BE /* ServerModel.m in Sources */,
 				9304C6101F69351500C756BE /* CommentModel.m in Sources */,
