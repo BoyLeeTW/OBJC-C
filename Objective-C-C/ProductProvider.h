@@ -25,4 +25,6 @@
 
 -(void) requestProduct;
 
+-(void) reuqestNextPage;
+
 @end
