@@ -158,8 +158,23 @@ static NSString * const reuseIdentifier = @"ProductCell";
     NSNumber *productPrice = productInCell.price;
     
     NSString *priceToString = [productPrice stringValue];
+    
     cell.productPriceLabel.text = priceToString;
 
+    NSString *baseURL = @"http://52.198.40.72/patissier/products/";
+    
+    NSString *productID = productInCell.productId;
+    
+    NSString *productPreviewURL = [NSString stringWithFormat:@"%@%@%@", baseURL, productID, @"/preview.jpg"];
+    
+    NSURL *imageUrl = [NSURL URLWithString:productPreviewURL];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+    
+    UIImage *productImage = [UIImage imageWithData:imageData];
+    [cell.productImageView setContentMode:UIViewContentModeScaleAspectFill];
+    [cell.productImageView setImage:productImage];
+    
     return cell;
 
 }
