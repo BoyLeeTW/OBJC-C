@@ -19,6 +19,8 @@
 
 @implementation ProductCollectionViewController
 
+int *selectedRow = 0;
+
 static NSString * const reuseIdentifier = @"ProductCell";
 
 @synthesize productProvider;
@@ -177,7 +179,11 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     NSString *priceToString = [productPrice stringValue];
     
-    cell.productPriceLabel.text = priceToString;
+    NSString *priceString = [NSString stringWithFormat:@"%@%@", @"$ ", priceToString];
+    
+    
+    cell.productPriceLabel.text = priceString;
+    
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -202,6 +208,34 @@ static NSString * const reuseIdentifier = @"ProductCell";
         
     });
     return cell;
+
+}
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Product *productInCell = [_products objectAtIndex: indexPath.row];
+
+    selectedRow = indexPath.row;
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+        CommentsTableViewController *destinationViewController = segue.destinationViewController;
+
+        Product *productInCell = [_products objectAtIndex: selectedRow];
+
+        destinationViewController.productName = productInCell.name;
+
+        NSNumber *productPrice = productInCell.price;
+        
+        NSString *priceToString = [productPrice stringValue];
+        
+        destinationViewController.productPrice = priceToString;
+
+        destinationViewController.productId = productInCell.productId;
 
 }
 
