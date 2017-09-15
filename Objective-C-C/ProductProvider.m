@@ -7,7 +7,7 @@
 //
 
 #import "ProductProvider.h"
-#import "ProductModel.h"
+#import "Product.h"
 #import "AFNetworking.h"
 
 @implementation ProductProvider {
@@ -65,7 +65,7 @@
           
           for (NSDictionary *eachProduct in jsonObj) {
               
-              ProductModel *product = [[ProductModel alloc] init];
+              Product *product = [[Product alloc] init];
               
               NSDictionary *b4Input = eachProduct;
               
