@@ -119,10 +119,25 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     NSLog(@"Delegate requested products");
     
+    _nextPage = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1OTI1MWNiMTQ3ZDUzYjA4NWNhMDc2NTQiLCJsaW1pdCI6MTAsIm9mZnNldCI6MTAsInR5cGUiOiJwYWdlIiwidmVyc2lvbiI6IjEuMCJ9.tIGvrPtticeV7ssvpy5p0_jMOHjTNYqNfJaqdOUKiTs";
+    
     [[self collectionView ] reloadData];
 }
 
+-(void) didGetNextPageProducts:(NSArray *)fetchedProducts {
     
+    for (id nextPageProduct in fetchedProducts) {
+        
+        Product *product = [[Product alloc] init];
+        
+        [_products addObject:product];
+    }
+    
+    _nextPage = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1OTI1MWNiMTQ3ZDUzYjA4NWNhMDc2NTQiLCJsaW1pdCI6MTAsIm9mZnNldCI6MjAsInR5cGUiOiJwYWdlIiwidmVyc2lvbiI6IjEuMCJ9.Ba7YlBl-turKSvUOxl8heMhnZalwqllsKSbV2PjOViw";
+    
+    [[self collectionView] reloadData];
+    
+}
     
 -(void) didFail:(NSError *)error {
     
@@ -133,9 +148,13 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     if (indexPath.row == _products.count - 1 && _nextPage != @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1OTI1MWNiMTQ3ZDUzYjA4NWNhMDc2NTQiLCJsaW1pdCI6MTAsIm9mZnNldCI6MjAsInR5cGUiOiJwYWdlIiwidmVyc2lvbiI6IjEuMCJ9.Ba7YlBl-turKSvUOxl8heMhnZalwqllsKSbV2PjOViw") {
         
+        NSLog(@"Next Page func action!");
         
+        productProvider = [[ProductProvider alloc] init];
         
-        // loadMoreData func action!
+        productProvider.delegate = self;
+        
+        productProvider.requestNextPage;
         
     }
     
@@ -162,7 +181,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    return 10;
+    return _products.count;
 
 }
 

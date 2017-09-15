@@ -10,6 +10,8 @@
 
 @protocol ProductManagerDelegate
 
+-(void) didGetNextPageProducts:(NSArray *) fetchedProducts;
+
 -(void) didGetProducts:(NSArray *) fetchedProducts;
 
 -(void) didFail:(NSError *) error;
@@ -25,6 +27,6 @@
 
 -(void) requestProduct;
 
--(void) reuqestNextPage;
+-(void) requestNextPage;
 
 @end
