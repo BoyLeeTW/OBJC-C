@@ -10,7 +10,9 @@
 #import <Foundation/Foundation.h>
 #import "CommentProvider.h"
 #import "ProductInfoTableViewCell.h"
+#import "CommentTableViewCell.h"
 #import "CommentModel.h"
+#import "CommentUserProvider.h"
 
 typedef enum {
     
@@ -30,7 +32,7 @@ typedef enum {
 
 @property (strong, nonatomic) NSString *productName;
 
-@property (nonatomic) double *productPrice;
+@property (strong, nonatomic) NSString *productPrice;
 
 @property (strong, nonatomic) UIImage *productImage;
 

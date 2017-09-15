@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductProvider.h"
+#import "CommentsTableViewController.h"
 
-@interface ProductCollectionViewController : UICollectionViewController
+@interface ProductCollectionViewController : UICollectionViewController <ProductManagerDelegate>
+
+@property (strong, atomic, readwrite) ProductProvider *productProvider;
+@property NSMutableArray *products;
+@property NSMutableString *nextPage;
 
 @end

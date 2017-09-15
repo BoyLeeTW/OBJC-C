@@ -121,7 +121,7 @@
         <scene sceneID="Rll-J8-KcV">
             <objects>
                 <navigationController id="cE4-6h-cgP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="OwF-7a-zz0"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="icon-profile" selectedImage="icon-profile-selected" id="OwF-7a-zz0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="91v-Me-yHh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -256,7 +256,7 @@
         <scene sceneID="u8u-vl-ex5">
             <objects>
                 <navigationController id="jdw-Sc-iU3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Uo-2l-ajA"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="icon-store" selectedImage="icon-store" id="5Uo-2l-ajA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="V2a-Q4-vxe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -355,7 +355,7 @@
                                     <outlet property="productLowerBlockView" destination="OZp-Bg-Hjk" id="ObN-G6-7OS"/>
                                     <outlet property="productNameLabel" destination="zyQ-d9-xeF" id="AXq-az-ZDp"/>
                                     <outlet property="productPriceLabel" destination="3m9-js-jb6" id="RC1-Ry-PqV"/>
-                                    <segue destination="eeG-Hl-rLH" kind="show" id="l46-Hq-4JL"/>
+                                    <segue destination="eeG-Hl-rLH" kind="show" identifier="shoeComment" id="l46-Hq-4JL"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -475,6 +475,9 @@
     <resources>
         <image name="icon-heart" width="12" height="12"/>
         <image name="icon-placedholder" width="25" height="23"/>
+        <image name="icon-profile" width="26" height="26"/>
+        <image name="icon-profile-selected" width="26" height="26"/>
+        <image name="icon-store" width="26" height="26"/>
         <image name="landing" width="443" height="667"/>
     </resources>
 </document>
