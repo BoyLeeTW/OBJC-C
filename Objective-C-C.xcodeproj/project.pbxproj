@@ -19,7 +19,7 @@
 		9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */; };
 		A24A624B1F690101007EC62F /* luximr.dataset in Resources */ = {isa = PBXBuildFile; fileRef = A24A624A1F690101007EC62F /* luximr.dataset */; };
 		A25EC5411F6A53D4005CA20A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = A25EC5401F6A53D4005CA20A /* Product.m */; };
-		A268AA391F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A268AA371F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodeld */; };
+		A268AA3E1F6BA13000DFFC0F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A268AA3D1F6BA13000DFFC0F /* CoreData.framework */; };
 		A2835F3C1F661FC80061328A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3B1F661FC80061328A /* main.m */; };
 		A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F3E1F661FC80061328A /* AppDelegate.m */; };
 		A2835F421F661FC80061328A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2835F411F661FC80061328A /* ViewController.m */; };
@@ -55,7 +55,7 @@
 		A24A624A1F690101007EC62F /* luximr.dataset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luximr.dataset; sourceTree = "<group>"; };
 		A25EC5401F6A53D4005CA20A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		A25EC5421F6A53EC005CA20A /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		A268AA381F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Objective-C-C.xcdatamodel"; sourceTree = "<group>"; };
+		A268AA3D1F6BA13000DFFC0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A2835F371F661FC80061328A /* Objective-C-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2835F3B1F661FC80061328A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2835F3D1F661FC80061328A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A268AA3E1F6BA13000DFFC0F /* CoreData.framework in Frameworks */,
 				9DA7E5F03A219F3658DE0203 /* libPods-Objective-C-C.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +88,7 @@
 		04C402C2E035C9021ABA08AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A268AA3D1F6BA13000DFFC0F /* CoreData.framework */,
 				4698F82B79211E0ECD6390F8 /* libPods-Objective-C-C.a */,
 			);
 			name = Frameworks;
@@ -173,7 +175,6 @@
 			children = (
 				A24A624A1F690101007EC62F /* luximr.dataset */,
 				A2835F3D1F661FC80061328A /* AppDelegate.h */,
-				A268AA371F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodeld */,
 				A25EC5421F6A53EC005CA20A /* Product.h */,
 				A25EC5401F6A53D4005CA20A /* Product.m */,
 				933F78F01F66A4C400DC7395 /* LoginViewController.m */,
@@ -352,7 +353,6 @@
 				A2835F3F1F661FC80061328A /* AppDelegate.m in Sources */,
 				9304C60D1F6926A600C756BE /* ServerModel.m in Sources */,
 				9304C6101F69351500C756BE /* CommentModel.m in Sources */,
-				A268AA391F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodeld in Sources */,
 				9304C5FE1F68CF9E00C756BE /* ProfileViewController.m in Sources */,
 				A2835F3C1F661FC80061328A /* main.m in Sources */,
 			);
@@ -518,19 +518,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A268AA371F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A268AA381F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodel */,
-			);
-			currentVersion = A268AA381F6B7FBF00DFFC0F /* Objective-C-C.xcdatamodel */;
-			path = "Objective-C-C.xcdatamodeld";
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A2835F2F1F661FC80061328A /* Project object */;
 }

@@ -124,30 +124,9 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath:indexPath];
 
-//    UIGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchIsFavoriteButton:)];
-//    
-//    [cell.isFavoriteProductButton addGestureRecognizer:singleTap];
-
     return cell;
 
 }
-
-//- (void)touchIsFavoriteButton: (UIButton *)sender {
-//
-//    if (sender.tintColor == UIColor.redColor) {
-//        
-//        sender.tintColor = [UIColor colorWithRed: 165.0 / 255.0
-//                                           green: 170.0 / 255.0
-//                                            blue: 178.0 / 255.0
-//                                           alpha: 1.0];
-//
-//    } else {
-//
-//        sender.tintColor = [UIColor redColor];
-//
-//    }
-//
-//}
 
 #pragma mark <UICollectionViewDelegate>
 
