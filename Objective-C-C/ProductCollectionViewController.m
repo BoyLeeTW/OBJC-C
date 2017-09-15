@@ -125,6 +125,19 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     NSLog(@"%@", error);
 }
+
+-(void) collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == _products.count - 1 && _nextPage != @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1OTI1MWNiMTQ3ZDUzYjA4NWNhMDc2NTQiLCJsaW1pdCI6MTAsIm9mZnNldCI6MjAsInR5cGUiOiJwYWdlIiwidmVyc2lvbiI6IjEuMCJ9.Ba7YlBl-turKSvUOxl8heMhnZalwqllsKSbV2PjOViw") {
+        
+        
+        
+        // loadMoreData func action!
+        
+    }
+    
+}
+
 /*
 #pragma mark - Navigation
 

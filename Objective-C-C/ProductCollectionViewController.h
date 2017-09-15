@@ -13,5 +13,6 @@
 
 @property (strong, atomic, readwrite) ProductProvider *productProvider;
 @property NSMutableArray *products;
+@property NSMutableString *nextPage;
 
 @end
