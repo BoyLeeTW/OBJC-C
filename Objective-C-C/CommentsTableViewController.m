@@ -30,6 +30,8 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
    
     
+    NSLog(@"%@", _productName);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -173,13 +175,35 @@
                 
             }
             
-            cell.productNameLabel.backgroundColor = [UIColor blueColor];
+            cell.productNameLabel.text = _productName;
             
+            NSString * price = [NSString stringWithFormat:@"%@%@", @"$ ", _productPrice];
+
+            cell.productPriceLabel.text = price;
             
-            cell.productPriceLabel.text = @"1000";
-            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                
+                NSString *baseURL = @"http://52.198.40.72/patissier/products/";
+                
+                NSString *productID = _productId;
+                
+                NSString *productPreviewURL = [NSString stringWithFormat:@"%@%@%@", baseURL, productID, @"/preview.jpg"];
+                
+                NSURL *imageUrl = [NSURL URLWithString:productPreviewURL];
+                
+                NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+                
+                UIImage *productImage = [UIImage imageWithData:imageData];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [cell.productImageView setContentMode:UIViewContentModeScaleAspectFill];
+                    
+                    [cell.productImageView setImage:productImage];
+                });
+                
+            });
             return cell;
-            
         }
         case comments:
         {

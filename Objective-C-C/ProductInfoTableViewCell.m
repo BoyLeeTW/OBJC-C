@@ -68,8 +68,7 @@
     
     self.productImageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    
-    self.productImageView.backgroundColor = [UIColor blueColor];
+    self.productImageView.backgroundColor = [UIColor whiteColor];
     
     [self.productNameLabel.topAnchor constraintEqualToAnchor:self.productImageView.topAnchor constant:0.0].active = YES;
     
@@ -92,7 +91,11 @@
     
     self.addToCartButton.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.addToCartButton.backgroundColor = [UIColor blueColor];
+    self.addToCartButton.backgroundColor = [UIColor colorWithRed:4/255.0 green:107/255.0 blue:149/255.0 alpha:1.0];
+    
+    [self.addToCartButton setTitle:@"Add to Cart" forState:UIControlStateNormal];
+    
+    [self.addToCartButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     
     [self.productPriceLabel.bottomAnchor constraintEqualToAnchor:self.productImageView.bottomAnchor constant:0.0].active = YES;

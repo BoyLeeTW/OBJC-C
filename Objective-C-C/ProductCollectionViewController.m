@@ -9,7 +9,7 @@
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductProvider.h"
-#import "ProductModel.h"
+#import "Product.h"
 
 @interface ProductCollectionViewController ()
 
@@ -18,6 +18,8 @@
 @end
 
 @implementation ProductCollectionViewController
+
+int *selectedRow = 0;
 
 static NSString * const reuseIdentifier = @"ProductCell";
 
@@ -110,6 +112,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     self.collectionView.collectionViewLayout = self.cellLayout;
 
+}
 
 #pragma mark <ProductProviderDelegate>
 -(void) didGetProducts:(NSArray *)fetchedProducts {
@@ -121,10 +124,25 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [[self collectionView ] reloadData];
 }
 
+    
+    
 -(void) didFail:(NSError *)error {
     
     NSLog(@"%@", error);
 }
+
+-(void) collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == _products.count - 1 && _nextPage != @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1OTI1MWNiMTQ3ZDUzYjA4NWNhMDc2NTQiLCJsaW1pdCI6MTAsIm9mZnNldCI6MjAsInR5cGUiOiJwYWdlIiwidmVyc2lvbiI6IjEuMCJ9.Ba7YlBl-turKSvUOxl8heMhnZalwqllsKSbV2PjOViw") {
+        
+        
+        
+        // loadMoreData func action!
+        
+    }
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -153,7 +171,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath:indexPath];
     
-    ProductModel *productInCell = [_products objectAtIndex: indexPath.row];
+    Product *productInCell = [_products objectAtIndex: indexPath.row];
     
     cell.productNameLabel.text = productInCell.name;
     
@@ -161,7 +179,11 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     NSString *priceToString = [productPrice stringValue];
     
-    cell.productPriceLabel.text = priceToString;
+    NSString *priceString = [NSString stringWithFormat:@"%@%@", @"$ ", priceToString];
+    
+    
+    cell.productPriceLabel.text = priceString;
+    
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -186,6 +208,34 @@ static NSString * const reuseIdentifier = @"ProductCell";
         
     });
     return cell;
+
+}
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Product *productInCell = [_products objectAtIndex: indexPath.row];
+
+    selectedRow = indexPath.row;
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+        CommentsTableViewController *destinationViewController = segue.destinationViewController;
+
+        Product *productInCell = [_products objectAtIndex: selectedRow];
+
+        destinationViewController.productName = productInCell.name;
+
+        NSNumber *productPrice = productInCell.price;
+        
+        NSString *priceToString = [productPrice stringValue];
+        
+        destinationViewController.productPrice = priceToString;
+
+        destinationViewController.productId = productInCell.productId;
 
 }
 

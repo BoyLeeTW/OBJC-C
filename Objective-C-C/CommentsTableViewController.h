@@ -32,7 +32,7 @@ typedef enum {
 
 @property (strong, nonatomic) NSString *productName;
 
-@property (nonatomic) double *productPrice;
+@property (strong, nonatomic) NSString *productPrice;
 
 @property (strong, nonatomic) UIImage *productImage;
 
