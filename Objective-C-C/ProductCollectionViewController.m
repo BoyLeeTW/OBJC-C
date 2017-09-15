@@ -9,7 +9,7 @@
 #import "ProductCollectionViewController.h"
 #import "ProductCollectionViewCell.h"
 #import "ProductProvider.h"
-#import "ProductModel.h"
+#import "Product.h"
 
 @interface ProductCollectionViewController ()
 
@@ -110,6 +110,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     self.collectionView.collectionViewLayout = self.cellLayout;
 
+}
 
 #pragma mark <ProductProviderDelegate>
 -(void) didGetProducts:(NSArray *)fetchedProducts {
@@ -121,6 +122,8 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [[self collectionView ] reloadData];
 }
 
+    
+    
 -(void) didFail:(NSError *)error {
     
     NSLog(@"%@", error);
@@ -166,7 +169,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: reuseIdentifier forIndexPath:indexPath];
     
-    ProductModel *productInCell = [_products objectAtIndex: indexPath.row];
+    Product *productInCell = [_products objectAtIndex: indexPath.row];
     
     cell.productNameLabel.text = productInCell.name;
     
