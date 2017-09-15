@@ -29,6 +29,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [self setUpNavigationBar];
 
     [self setUpCellLayout];
+
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -104,9 +105,11 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
     self.cellLayout.minimumLineSpacing = 21.5;
 
+
     self.collectionView.collectionViewLayout = self.cellLayout;
 
-}
+    self.collectionView.collectionViewLayout = self.cellLayout;
+
 
 #pragma mark <ProductProviderDelegate>
 -(void) didGetProducts:(NSArray *)fetchedProducts {
@@ -122,7 +125,6 @@ static NSString * const reuseIdentifier = @"ProductCell";
     
     NSLog(@"%@", error);
 }
-
 /*
 #pragma mark - Navigation
 

@@ -13,8 +13,8 @@
 +(instancetype) sharedInstance {
     
     static CommentProvider *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    static dispatch_once_t comments;
+    dispatch_once(&comments, ^{
         instance = [[CommentProvider alloc] init];
     });
     
